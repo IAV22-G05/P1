@@ -109,7 +109,7 @@ namespace UCM.IAV.Movimiento {
         /// </summary>
         public virtual void FixedUpdate()
         {
-            if (cuerpoRigido == null)
+            if (cuerpoRigido == null || cuerpoRigido.isKinematic)
                 return; // El movimiento será cinemático, fotograma a fotograma con Update
 
             // Limitamos la aceleración al máximo que acepta este agente (aunque normalmente vendrá ya limitada)
@@ -159,7 +159,7 @@ namespace UCM.IAV.Movimiento {
         /// </summary>
         public virtual void Update()
         {
-            if (cuerpoRigido != null)
+            if (cuerpoRigido != null && !cuerpoRigido.isKinematic)
                 return; // El movimiento será dinámico, controlado por la física y FixedUpdate
 
             // Limito la velocidad lineal antes de empezar
@@ -198,7 +198,7 @@ namespace UCM.IAV.Movimiento {
                 grupos.Clear();
             }
 
-            if (cuerpoRigido != null) {
+            if (cuerpoRigido != null && !cuerpoRigido.isKinematic) {
                 return; // El movimiento será dinámico, controlado por la física y FixedUpdate
             }
 
@@ -215,10 +215,10 @@ namespace UCM.IAV.Movimiento {
             rotacion += direccion.angular * Time.deltaTime;
 
             // Opcional: Esto es para actuar con contundencia si nos mandan parar (no es muy realista)
-            if (direccion.angular == 0.0f) 
-                rotacion = 0.0f; 
-            if (direccion.lineal.sqrMagnitude == 0.0f) 
-                velocidad = Vector3.zero; 
+            //if (direccion.angular == 0.0f) 
+            //    rotacion = 0.0f; 
+            //if (direccion.lineal.sqrMagnitude == 0.0f) 
+            //    velocidad = Vector3.zero; 
 
             /// En cada parte tardía del tick, encarar el agente (al menos para el avatar).... si es que queremos hacer este encaramiento
             transform.LookAt(transform.position + velocidad);
