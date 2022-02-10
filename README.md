@@ -28,213 +28,48 @@ Variables de clase:
 ### Clase Agente:
 
 Contiene los datos necesarios para crear los agentes y manejar su comportamiento.
-    
-Variables de clase:
+ 
+Tiene 3 funciones básicas que se encargan de la actualización de las velocidades, rotaciones y posiciones del propio agente.
 
-      bool combinarPorPeso
-      bool combinarPorPrioridad
-      float umbralPrioridad = 0.2f
-      float velocidadMax
-      float rotacionMax
-      float aceleracionMax
-      float aceleracionAngularMax
-      
-      Vector3 velocidad
-      float rotacion
-      float orientacion
-      
-      Direccion direccion
-      Dictionary<int, List<Direccion>> grupos
+#### -Update
+aplica los movimientos de forma cinemática, actualizando velocidades lineales, angulares y orientación del agente.
 
-      Rigidbody cuerpoRigido
-      
-   function FixedUpdate() -> void:
-      
-      // Si el agente es cinemático no se aplica el movimiento dinámico      
-      if cuerpoRigido == null:       
-                return
+#### -FixedUpdate
+aplica los movimientos de forma dinámica, usando fuerzas y aceleraciones, el resultado son movimientos algo más realistas y físicos que usando Update.
 
-      // Límite de aceleración máxima que acepta el agente (normalmente vendrá limitada)      
-      if direccion.lineal.sqrMagnitude > aceleracionMax:      
-          direccion.lineal = direccion.lineal.normalized * aceleracionMax
+#### -LateUpdate
+se usa para corregir y ajustar movimientos finales, limitar máximas velocidades, restear variables para su uso en próximas iteraciones o elegir direcciones prioritarias en caso de que haya varias.
 
-      // Aplicación de la fuerza
-      cuerpoRigido.AddForce(direccion.lineal, ForceMode.Acceleration)
+#### Funciones auxiliares
+Esta clase usa una serie de funciones como setters y getters para facilitar el uso y obtencion de determinados valores.
+##### -SetDireccion(Direccion direccion)
+##### -SetDireccion(Direccion direccion, float peso)
+##### -SetDireccion(Direccion direccion, int prioridad)
+##### -Direccion GetPrioridadDireccion()
+##### -Vec3 OriToVec(float orientacion)
 
-      // Límite de aceleración angular máxima que acepta el agente (normalmente vendrá limitada)
-      if direccion.angular > aceleracionAngularMax:
-          direccion.angular = aceleracionAngularMax
 
-      // Rotación del objeto sobre su eje Y (hacia arriba)
-      cuerpoRigido.AddTorque(transform.up * direccion.angular, ForceMode.Acceleration)
-
-      // Limitación de la velocidad lineal 
-      if cuerpoRigido.velocity.magnitude > velocidadMax:
-          cuerpoRigido.velocity = cuerpoRigido.velocity.normalized * velocidadMax
-
-      // Limitación de la velocidad angular 
-      if cuerpoRigido.angularVelocity.magnitude > rotacionMax:
-          cuerpoRigido.angularVelocity = cuerpoRigido.angularVelocity.normalized * rotacionMax
-      if cuerpoRigido.angularVelocity.magnitude < -rotacionMax:
-          cuerpoRigido.angularVelocity = cuerpoRigido.angularVelocity.normalized * -rotacionMax
-    
-  function Update() -> void:
-   
-      // Si el agente es dinámico no se aplica el movimiento cinemático   
-      if cuerpoRigido != null:
-              return 
-
-      // Limitación de la velocidad lineal
-      if velocidad.magnitude > velocidadMax:
-            velocidad= velocidad.normalized * velocidadMax
-
-     // Limitación de la velocidad angular
-      if rotacion > rotacionMax:
-          rotacion = rotacionMax
-      if rotacion < -rotacionMax:
-          rotacion = -rotacionMax
-      
-      // Se aplica el movimiento
-      Vector3 desplazamiento = velocidad * Time.deltaTime
-      transform.Translate(desplazamiento, Space.World)
-
-      orientacion += rotacion * Time.deltaTime
-      // Mantiene la orientación en el rango de 0 a 360 grados
-      if orientacion < 0.0f:
-          orientacion += 360.0f
-      else if orientacion > 360.0f:
-          orientacion -= 360.0f
-
-      // Elimina la rotación, antes de rotar el objeto lo que marque la variable orientación
-      transform.rotation = new Quaternion()
-      transform.Rotate(Vector3.up, orientacion)
-      
-  function LateUpdate() -> void:
-      
-      // Si el agente tiene dirección prioritaria, se le aplica
-      if (combinarPorPrioridad)
-          direccion = GetPrioridadDireccion()
-          grupos.Clear()
-      
-      // Si el agente es dinámico no se aplica el movimiento cinemático
-      if (cuerpoRigido != null) 
-          return       
-
-      // Límite de aceleración máxima que acepta el agente (normalmente vendrá limitada)
-      if direccion.lineal.sqrMagnitude > aceleracionMax
-          direccion.lineal = direccion.lineal.normalized * aceleracionMax
-
-      // Límite de aceleración angular máxima que acepta el agente (normalmente vendrá limitada)
-      if (direccion.angular > aceleracionAngularMax)
-          direccion.angular = aceleracionAngularMax;
-
-      // Calcula la velocidad y rotación en función de las aceleraciones  
-      velocidad += direccion.lineal * Time.deltaTime
-      rotacion += direccion.angular * Time.deltaTime
-
-      /// Encarar el agente hacia donde se dirige
-      transform.LookAt(transform.position + velocidad)
-
-      // Deja la dirección vacía para el próximo fotograma
-      direccion = new Direccion()
-      
-  function SetDireccion(Direccion direccion) -> void:
-      
-      // Establece la dirección a seguir por el agente
-      this.direccion = direccion
-    
-  function SetDireccion(Direccion direccion, float peso) -> void:
-      
-      // Establece la dirección a seguir por el agente según el peso
-      this.direccion.lineal += (peso * direccion.lineal);
-      this.direccion.angular += (peso * direccion.angular);
-     
-  function SetDireccion(Direccion direccion, int prioridad)
-          
-      // Establece la dirección a seguir por el agente según la prioridad
-      if !grupos.ContainsKey(prioridad):          
-          grupos.Add(prioridad, new List<Direccion>())
-
-      grupos[prioridad].Add(direccion)
-    
-  function GetPrioridadDireccion() -> Direccion
-      
-      // Devuelve la dirección calculada por prioridad
-      Direccion direccion = new Direccion()
-      List<int> gIdList = new List<int>(grupos.Keys)
-      gIdList.Sort()
-      foreach int gid in gIdList:
-          direccion = new Direccion()
-          
-          foreach (Direccion direccionIndividual in grupos[gid]):
-              // Dentro del grupo la mezcla es por peso
-              direccion.lineal += direccionIndividual.lineal
-              direccion.angular += direccionIndividual.angular
-          
-          // Si el resultado supera un umbral, se devuelve ese resultado
-          if direccion.lineal.magnitude > umbralPrioridad || Mathf.Abs(direccion.angular) > umbralPrioridad:
-              return direccion
-          
-      return direccion
-      
-  function OriToVec(float orientacion) -> Vector3
-          
-      // Calcula el Vector3 según un valor de orientación
-      Vector3 vector = Vector3.zero
-      vector.x = Mathf.Sin(orientacion * Mathf.Deg2Rad)
-      vector.z = Mathf.Cos(orientacion * Mathf.Deg2Rad)
-      return vector.normalized
+        
         
 ### Clase ComportamientoAgente:
 
-Plantilla para los comportamientos de los agentes.
+Es la clase base de todos los comportamientos que se implementarán a continuación, seguimiento, huída...
 
-Variables de clase:
+Dispone de 2 métodos principales 
 
-       
-      float peso = 1.0f
-      int prioridad = 1;
-      GameObject objetivo
-      Agente agente
+#### -Update
+Es un método que simplemente asigna la dirección que dicta cada comportamiento hijo. Hace elecciones en función de la prioridad.
       
-  function Update() -> void
+#### -Direccion GetDireccion
+Este método es uno virtual "Vacío" que redefine cada comportamiento hijo, es en el que se define cada algortimo de comportamiento.
       
-      // Establece la dirección que corresponde al agente
-      if agente.combinarPorPeso:
-          agente.SetDireccion(GetDireccion(), peso)
-      else if agente.combinarPorPrioridad:
-          agente.SetDireccion(GetDireccion(), prioridad)
-      else:
-          agente.SetDireccion(GetDireccion())
-
-  function GetDireccion() -> Direccion
       
-      return new Direccion();
       
- function RadianesAGrados(float rotacion)
-      
-      // Mentiene la rotación en el rango de 360 grados
-      rotacion %= 360.0f;
-      if Mathf.Abs(rotacion) > 180.0f:
-          if rotacion < 0.0f:
-              rotacion += 360.0f
-          else:
-              rotacion -= 360.0f
-      
-      return rotacion
-      
-
- function OriToVec(float orientacion) -> Vector3
-          
-      // Calcula el Vector3 según un valor de orientación
-      Vector3 vector = Vector3.zero
-      vector.x = Mathf.Sin(orientacion * Mathf.Deg2Rad)
-      vector.z = Mathf.Cos(orientacion * Mathf.Deg2Rad)
-      return vector.normalized
-      
-## Algoritmos:
+## Comportamientos
+En esta sección se describen los algoritmos que usaremos y en qué agentes se usarán
 
 ### Seguimiento (cinemático)
+Se aplica sobre la manada de ratas 
 
 Variables de clase
     
@@ -243,10 +78,12 @@ Variables de clase
     float velocidadMax
 
 function GetDireccion() -> Direccion:
-    
+
+
+
     Direccion direccion = new Direccion();
     
-    // Obtiene la direccion al objetivo    
+    // Obtenemos la dirección hacia el objetivo  
     direccion.lineal = objetivo.transform.position - transform.position
     direccion.lineal.Normalize()
     direccion.lineal *= agente.aceleracionMax    
@@ -254,6 +91,7 @@ function GetDireccion() -> Direccion:
     return direccion
 
 ### Seguimiento (dinámico)
+Se aplica sobre el perro
 
     GameObject objetivo
     Agente agente
@@ -273,6 +111,7 @@ function GetDireccion() -> Direccion:
     return direccion
 
 ### Huida (cinemática)
+Se aplica sobre el perro
 
 Variables de clase:
     
@@ -293,6 +132,7 @@ function GetDireccion() -> Direccion:
 
 
 ### Huida (dinámica)
+Se aplica sobre el perro
 
 Variables de clase:
 
@@ -314,6 +154,7 @@ function GetDireccion() -> Direccion:
     return direccion
     
 ### Llegada (cinemática)
+Se aplica sobre la manada de ratas
 
 Variables de clase:
 
@@ -357,6 +198,7 @@ function GetDireccion() -> Direccion:
     float tiempoObjetivo = 0.25
     
 ### Llegada (dinámica)
+Se aplica sobre el perro
 
 Variables de clase:
 
@@ -407,6 +249,7 @@ function GetDireccion() -> Direccion:
     return direccion
     
 ### Merodeo
+Se aplica sobre la manada de ratas
 
 Variables de clase:
 
@@ -425,3 +268,4 @@ function GetDireccion() -> Direccion:
     direccion.angular = random() * rotacionMax
 
     return direccion
+    
