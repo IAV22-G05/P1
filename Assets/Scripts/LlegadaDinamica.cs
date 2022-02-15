@@ -34,7 +34,7 @@ namespace UCM.IAV.Movimiento
 
             // Obtiene la direccion al objetivo    
             direccion.lineal = objetivo.transform.position - transform.position;
-
+            agente.transform.LookAt(objetivo.transform);
             // Comprueba si estamos dentro del radio
             if (direccion.lineal.magnitude < radioObjetivo)
             {

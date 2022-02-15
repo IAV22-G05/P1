@@ -8,6 +8,8 @@
    Autor: Federico Peinado 
    Contacto: email@federicopeinado.com
 */
+using UnityEngine;
+
 namespace UCM.IAV.Movimiento
 {
 
@@ -23,13 +25,15 @@ namespace UCM.IAV.Movimiento
         public override Direccion GetDireccion()
         {
             // Si fuese un comportamiento de dirección dinámico en el que buscásemos alcanzar cierta velocidad en el agente, se tendría en cuenta la velocidad actual del agente y se aplicaría sólo la aceleración necesaria
-            // Vector3 deltaV = targetVelocity - body.velocity;
-            // Vector3 accel = deltaV / Time.deltaTime;
+            //Vector3 deltaV = targetVelocity - body.velocity;
+            //Vector3 accel = deltaV / Time.deltaTime;
 
             Direccion direccion = new Direccion();
             direccion.lineal = objetivo.transform.position - transform.position;
+            direccion.lineal.y = 0;
             direccion.lineal.Normalize();
             direccion.lineal *= agente.aceleracionMax;
+            agente.transform.rotation = Quaternion.LookRotation(direccion.lineal, Vector3.up);
 
             // Podríamos meter una rotación automática en la dirección del movimiento, si quisiéramos
             return direccion;
