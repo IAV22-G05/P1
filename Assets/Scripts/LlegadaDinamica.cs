@@ -31,7 +31,9 @@ namespace UCM.IAV.Movimiento
 
             // Comprueba si estamos dentro del radio
             if (direccion.lineal.magnitude < radioObjetivo)
+            {
                 return null;
+            }
 
             // Si está fuera del radio de deceleración se mueve a velocidad máxima
             if (direccion.lineal.magnitude > radioDeceleracion)
