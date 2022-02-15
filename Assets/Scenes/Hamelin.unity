@@ -550,8 +550,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412609105}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: 0.29, z: 9.11}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.09000015, y: 0.29, z: 9.11}
   m_LocalScale: {x: 20.621115, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -572,6 +572,7 @@ GameObject:
   - component: {fileID: 635709779}
   - component: {fileID: 635709778}
   - component: {fileID: 635709777}
+  - component: {fileID: 635709781}
   m_Layer: 0
   m_Name: Amigo
   m_TagString: Untagged
@@ -708,6 +709,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635709773}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &635709781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635709773}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7652c0b84beb564383da952a4559c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peso: 1
+  prioridad: 1
+  objetivo: {fileID: 1021455439}
+  aceleracionMax: 8
+  radioObjetivo: 2
+  radioDeceleracion: 1
+  tiempoObjetivo: 0.1
+  RapidezObjetivo: 0
+  VelocidadObjetivo: {x: 0, y: 0, z: 0}
 --- !u!1 &687511467
 GameObject:
   m_ObjectHideFlags: 0
