@@ -22,6 +22,12 @@ namespace UCM.IAV.Movimiento
         [SerializeField]
         Vector3 VelocidadObjetivo;
 
+        Seguir seguir;
+
+        private void Start()
+        {
+            seguir = gameObject.GetComponent<Seguir>();
+        }
         public override Direccion GetDireccion()
         {
             Direccion direccion = new Direccion();
@@ -32,16 +38,21 @@ namespace UCM.IAV.Movimiento
             // Comprueba si estamos dentro del radio
             if (direccion.lineal.magnitude < radioObjetivo)
             {
-                return null;
+                direccion.lineal = Vector3.zero;
+                return direccion;
             }
 
             // Si está fuera del radio de deceleración se mueve a velocidad máxima
             if (direccion.lineal.magnitude > radioDeceleracion)
-                RapidezObjetivo = velocidadMax;
+                //RapidezObjetivo = velocidadMax;
+                seguir.enabled = true;
 
             // Si no calcula una velocidad escalada
             else
+            {
+                seguir.enabled = false;
                 RapidezObjetivo = velocidadMax * direccion.lineal.magnitude / radioDeceleracion;
+            }
 
             // Combinación de rapidez y direccion
             VelocidadObjetivo = direccion.lineal;

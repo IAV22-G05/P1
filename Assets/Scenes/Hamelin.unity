@@ -716,7 +716,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635709773}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7652c0b84beb564383da952a4559c9a, type: 3}
   m_Name: 
@@ -726,7 +726,7 @@ MonoBehaviour:
   objetivo: {fileID: 1021455439}
   aceleracionMax: 8
   radioObjetivo: 2
-  radioDeceleracion: 1
+  radioDeceleracion: 4
   tiempoObjetivo: 0.1
   RapidezObjetivo: 0
   VelocidadObjetivo: {x: 0, y: 0, z: 0}

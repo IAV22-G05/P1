@@ -15,9 +15,9 @@ namespace UCM.IAV.Movimiento
         float velocidadMax;
         [SerializeField]
         float rotacionMax;
-        
 
-        float timeToNext = 1.0f; // Timer para cambiar de orientación 
+        // Timer para que la rata solo cambie de rotación cuando pasa un segundo
+        float timeToNext = 1.0f; 
         public override Direccion GetDireccion()
         {
             Direccion direccion = new Direccion();
@@ -37,6 +37,7 @@ namespace UCM.IAV.Movimiento
 
         private void OnCollisionEnter(Collision collision)
         {
+            // Rota a la rata 180 grados cuando choca con una pared
             if(collision.gameObject.GetComponent<BoxCollider>())
             {
                 agente.rotacion -= 180.0f;
