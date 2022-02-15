@@ -127,8 +127,8 @@ namespace UCM.IAV.Movimiento {
             // La opción por defecto sería usar ForceMode.Force, pero eso implicaría que el comportamiento de dirección tuviese en cuenta la masa a la hora de calcular la aceleración que se pide
             cuerpoRigido.AddTorque(transform.up * direccion.angular, ForceMode.Acceleration);  
 
-            /* El tema de la orientación, descomentarlo si queremos sobreescribir toda la cuestión de la velocidad angular
-            orientacion += rotacion / Time.deltaTime; // En lugar de * he puesto / para así calcular la aceleración, que es lo que debe ir aquí
+            // El tema de la orientación, descomentarlo si queremos sobreescribir toda la cuestión de la velocidad angular
+            orientacion += rotacion * Time.deltaTime; // En lugar de * he puesto / para así calcular la aceleración, que es lo que debe ir aquí
             // Necesitamos "constreñir" inteligentemente la orientación al rango (0, 360)
             if (orientacion < 0.0f)
                 orientacion += 360.0f;
@@ -137,7 +137,7 @@ namespace UCM.IAV.Movimiento {
 
             Vector3 orientationVector = OriToVec(orientacion);
             cuerpoRigido.rotation = Quaternion.LookRotation(orientationVector, Vector3.up);
-            */
+            
 
             // Aunque también se controlen los máximos en el LateUpdate, entiendo que conviene también hacerlo aquí, en FixedUpdate, que puede llegar a ejecutarse más veces
 

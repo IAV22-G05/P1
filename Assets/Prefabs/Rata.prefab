@@ -145,10 +145,10 @@ MonoBehaviour:
   combinarPorPeso: 0
   combinarPorPrioridad: 0
   umbralPrioridad: 0.2
-  velocidadMax: 15
-  rotacionMax: 5
+  velocidadMax: 1
+  rotacionMax: 360
   aceleracionMax: 8
-  aceleracionAngularMax: 5
+  aceleracionAngularMax: 360
   velocidad: {x: 0, y: 0, z: 0}
   rotacion: 0
   orientacion: 0
@@ -182,8 +182,8 @@ MonoBehaviour:
   peso: 1
   prioridad: 1
   objetivo: {fileID: 0}
-  velocidadMax: 15
-  rotacionMax: 5
+  velocidadMax: 1
+  rotacionMax: 45
 --- !u!54 &1996513807474752573
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -193,10 +193,10 @@ Rigidbody:
   m_GameObject: {fileID: 992413289615354795}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 0.83
+  m_AngularDrag: 0.01
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0

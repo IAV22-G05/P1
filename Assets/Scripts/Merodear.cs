@@ -15,17 +15,32 @@ namespace UCM.IAV.Movimiento
         float velocidadMax;
         [SerializeField]
         float rotacionMax;
+        
+
+        float timeToNext = 1.0f; // Timer para cambiar de orientación 
         public override Direccion GetDireccion()
         {
             Direccion direccion = new Direccion();
-
             // Obtiene la velocidad del vector de orientacion
             direccion.lineal = velocidadMax * agente.OriToVec(agente.orientacion);
-
-            // Cambia la orientacion aleatoriamente
-            direccion.angular = Random.Range(-1.0f, 1.0f) * rotacionMax;
+            if (timeToNext <= 0)
+            {
+                // Cambia la orientacion aleatoriamente
+                agente.rotacion = Random.Range(-1.0f, 1.0f) * rotacionMax;
+                timeToNext = 1.0f;
+            }
+            else
+                timeToNext -= Time.deltaTime;
             
             return direccion;
+        }
+
+        private void OnCollisionEnter(Collision collision)
+        {
+            if(collision.gameObject.GetComponent<BoxCollider>())
+            {
+                agente.rotacion -= 180.0f;
+            }
         }
     }
 }
