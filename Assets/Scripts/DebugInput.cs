@@ -34,5 +34,9 @@ public class DebugInput : MonoBehaviour
                 i--;
             }
         }
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }
