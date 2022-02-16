@@ -22,6 +22,14 @@ namespace UCM.IAV.Movimiento
         /// Obtiene la dirección
         /// </summary>
         /// <returns></returns>
+
+
+        Animator anim;
+        bool walking = false;
+        private void Start()
+        {
+            anim = GetComponent<Animator>();
+        }
         public override Direccion GetDireccion()
         {
             Direccion direccion = new Direccion();
@@ -30,7 +38,11 @@ namespace UCM.IAV.Movimiento
             direccion.lineal.Normalize();
             direccion.lineal *= agente.aceleracionMax;
 
+            //Orientacion
+            agente.transform.rotation = Quaternion.LookRotation(direccion.lineal, Vector3.up);
+
             // Podríamos meter una rotación automática en la dirección del movimiento, si quisiéramos
+
 
             return direccion;
         }
