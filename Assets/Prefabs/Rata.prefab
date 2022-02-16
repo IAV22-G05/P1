@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 7326967281034501367}
   - component: {fileID: 1996513807474752573}
   - component: {fileID: 1246557778787017617}
+  - component: {fileID: 1582553907309616646}
   m_Layer: 0
   m_Name: Rata
   m_TagString: Untagged
@@ -160,7 +161,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992413289615354795}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82e92ec8f463fd84cac92ffd22bc97c9, type: 3}
   m_Name: 
@@ -175,7 +176,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992413289615354795}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85fb114539e7545489b547f4605cc6c3, type: 3}
   m_Name: 
@@ -208,7 +209,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 992413289615354795}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7652c0b84beb564383da952a4559c9a, type: 3}
   m_Name: 
@@ -222,3 +223,22 @@ MonoBehaviour:
   tiempoObjetivo: 0.1
   RapidezObjetivo: 0
   VelocidadObjetivo: {x: 0, y: 0, z: 0}
+--- !u!114 &1582553907309616646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992413289615354795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7061b7a477a4a8241bf9b5464ad91c7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peso: 1
+  prioridad: 1
+  objetivo: {fileID: 0}
+  objetivos: []
+  distancia: 0
+  coeficiente: 0
+  aceleracionMax: 0
