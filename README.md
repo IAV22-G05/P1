@@ -269,3 +269,73 @@ function GetDireccion() -> Direccion:
 
     return direccion
     
+    
+## OTROS SCRIPTS Y COMPORTAMIENTOS AÑADIDOS 
+### Percepción Perro
+Es un script que maneja los cambios de comportamientos del perro
+
+El perro tiene una lista dinamica de ratas cercanas, cuando hay suficientes ratas, el perro empieza a huir.
+
+Variables de clase
+
+    //Numero maximo de ratas hasta que el perro empieza a huir
+    int maxRats;
+    //Numero de ratas que han entrado en rango
+    int ratsInRange = 0;
+    //Lista de ratas en rango
+    List<GameObject> rats;
+    
+OnTriggerEnter (Cuando una rata entra en rango)
+    
+      //Comprobamos que sea una rata (es el unico objeto con componente Merodeo)
+      if (es rata)
+      {
+            //Añadimos la rata a la lista
+            rats.Add(rata)
+            ratsInRange++
+
+            //Si hay x ratas en rango ya se empieza a ir
+            if (ratsInRange > maxRats)
+            {
+                  //Elige la rata mas cercana para huir de ella
+                   huir objetivo = rata mas cercana -> Funcion auxiliar
+
+                  //Desactiva el resto de comportamientos
+                  desactiva seguir
+                  desactiva llegada
+            }            
+       }
+       
+       
+OnTriggerExit (Cuando una rata sale entra en rango)
+
+        //Comprobamos que el objeto sea una rata
+        if (es rata)
+        {
+            //Restamos el numero de ratas
+            ratsInRange--
+
+            //Comprobar si hay suficientes ratas para que el perro huya
+            if (ratsInRange < maxRats)
+            {
+                quitar objetivo huir
+                
+                //Importante el orden de activacion porque se pueden pisar comportamientos
+                activar llegada
+                activar seguir
+            }
+
+            //Eliminar las ratas de la lista
+            while ()
+            {
+               Encontrar la rata que ha salido
+            }
+
+            //La eliminamos de la lista
+            rats.RemoveAt(rata que ha salido);
+        }
+
+
+
+
+
