@@ -22,6 +22,8 @@ namespace UCM.IAV.Movimiento
         /// Obtiene la dirección
         /// </summary>
         /// <returns></returns>
+        /// 
+
         public override Direccion GetDireccion()
         {
             // Si fuese un comportamiento de dirección dinámico en el que buscásemos alcanzar cierta velocidad en el agente, se tendría en cuenta la velocidad actual del agente y se aplicaría sólo la aceleración necesaria
@@ -34,8 +36,10 @@ namespace UCM.IAV.Movimiento
                 direccion.lineal = transform.position - objetivo.transform.position;
                 direccion.lineal.Normalize();
                 direccion.lineal *= agente.aceleracionMax;
+                direccion.lineal.y = 0;
                 agente.transform.rotation = Quaternion.LookRotation(direccion.lineal, Vector3.up);
                 // Podríamos meter una rotación automática en la dirección del movimiento, si quisiéramos
+
             }
             return direccion;
         }

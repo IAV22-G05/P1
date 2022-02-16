@@ -23,10 +23,12 @@ namespace UCM.IAV.Movimiento
         Vector3 VelocidadObjetivo;
 
         Seguir seguir;
+        Huir huir;
 
         private void Start()
         {
             seguir = gameObject.GetComponent<Seguir>();
+            huir = gameObject.GetComponent<Huir>();
         }
         public override Direccion GetDireccion()
         {
@@ -45,8 +47,10 @@ namespace UCM.IAV.Movimiento
 
             // Si está fuera del radio de deceleración se mueve a velocidad máxima
             if (direccion.lineal.magnitude > radioDeceleracion)
+            {
                 //RapidezObjetivo = velocidadMax;
                 seguir.enabled = true;
+            }
 
             // Si no calcula una velocidad escalada
             else
