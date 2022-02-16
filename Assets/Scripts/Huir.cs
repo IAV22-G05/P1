@@ -1,4 +1,4 @@
-﻿/*    
+/*    
    Copyright (C) 2020-2021 Federico Peinado
    http://www.federicopeinado.com
 
@@ -8,6 +8,8 @@
    Autor: Federico Peinado 
    Contacto: email@federicopeinado.com
 */
+using UnityEngine;
+
 namespace UCM.IAV.Movimiento
 {
 
@@ -27,12 +29,15 @@ namespace UCM.IAV.Movimiento
             // Vector3 accel = deltaV / Time.deltaTime;
 
             Direccion direccion = new Direccion();
-            direccion.lineal = transform.position - objetivo.transform.position;
-            direccion.lineal.Normalize();
-            direccion.lineal *= agente.aceleracionMax;
-
-            // Podríamos meter una rotación automática en la dirección del movimiento, si quisiéramos
+            if (objetivo)
+            {
+                direccion.lineal = transform.position - objetivo.transform.position;
+                direccion.lineal.Normalize();
+                direccion.lineal *= agente.aceleracionMax;
+                agente.transform.rotation = Quaternion.LookRotation(direccion.lineal, Vector3.up);
+                // Podríamos meter una rotación automática en la dirección del movimiento, si quisiéramos
+            }
             return direccion;
         }
     }
-}
+} 

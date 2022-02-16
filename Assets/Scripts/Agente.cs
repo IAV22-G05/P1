@@ -109,6 +109,12 @@ namespace UCM.IAV.Movimiento {
         /// </summary>
         public virtual void FixedUpdate()
         {
+            if (combinarPorPrioridad)
+            {
+                direccion = GetPrioridadDireccion();
+                grupos.Clear();
+            }
+
             if (cuerpoRigido == null || cuerpoRigido.isKinematic)
                 return; // El movimiento será cinemático, fotograma a fotograma con Update
 
@@ -137,7 +143,6 @@ namespace UCM.IAV.Movimiento {
 
             Vector3 orientationVector = OriToVec(orientacion);
             cuerpoRigido.rotation = Quaternion.LookRotation(orientationVector, Vector3.up);
-            
 
             // Aunque también se controlen los máximos en el LateUpdate, entiendo que conviene también hacerlo aquí, en FixedUpdate, que puede llegar a ejecutarse más veces
 
