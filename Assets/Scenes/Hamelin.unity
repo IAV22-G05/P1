@@ -1434,10 +1434,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 992413289142222443, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: m_Name
       value: Rata
+      objectReference: {fileID: 0}
+    - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 992413289615354802, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -1529,6 +1539,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioObjetivo
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioDeceleracion
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: objetivo
@@ -1537,7 +1557,7 @@ PrefabInstance:
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: distancia
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -1724,25 +1744,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 51.23, y: 0, z: 0}
---- !u!1 &969405328 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8520393598868766258, guid: f9fb4649d6c74b449be2ccf7c4971ffc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1092186717}
-  m_PrefabAsset: {fileID: 0}
---- !u!135 &969405329
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969405328}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 8.712113
-  m_Center: {x: 0, y: 8.488677, z: -4.870002}
 --- !u!1 &1021455439
 GameObject:
   m_ObjectHideFlags: 0
@@ -1921,10 +1922,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 992413289142222443, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: m_Name
       value: Rata (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -2021,6 +2032,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioObjetivo
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioDeceleracion
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: objetivo
@@ -2029,7 +2050,7 @@ PrefabInstance:
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: distancia
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -2423,10 +2444,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 992413289142222443, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: m_Name
       value: Rata (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 992413289615354802, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -2518,6 +2549,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioObjetivo
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioDeceleracion
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: objetivo
@@ -2526,7 +2567,7 @@ PrefabInstance:
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: distancia
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -2746,10 +2787,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 992413289142222443, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: m_Name
       value: Rata (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -2846,6 +2897,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioObjetivo
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioDeceleracion
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: objetivo
@@ -2854,7 +2915,7 @@ PrefabInstance:
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: distancia
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -2965,10 +3026,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 992413289142222443, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: m_Name
       value: Rata (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -3065,6 +3136,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioObjetivo
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioDeceleracion
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: objetivo
@@ -3073,7 +3154,7 @@ PrefabInstance:
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: distancia
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -3279,10 +3360,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 992413289142222443, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: m_Name
       value: Rata (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -3379,6 +3470,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioObjetivo
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioDeceleracion
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: objetivo
@@ -3387,7 +3488,7 @@ PrefabInstance:
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: distancia
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -4172,10 +4273,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 992413289142222443, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: m_Name
       value: Rata (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -4272,6 +4383,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioObjetivo
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioDeceleracion
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: objetivo
@@ -4280,7 +4401,7 @@ PrefabInstance:
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: distancia
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -4416,10 +4537,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 992413289142222443, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: m_Name
       value: Rata (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -4516,6 +4647,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioObjetivo
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioDeceleracion
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: objetivo
@@ -4524,7 +4665,7 @@ PrefabInstance:
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: distancia
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -4792,10 +4933,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 992413289142222443, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: m_Name
       value: Rata (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 992413289615354802, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -4887,6 +5038,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioObjetivo
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioDeceleracion
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: objetivo
@@ -4895,7 +5056,7 @@ PrefabInstance:
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: distancia
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -5006,10 +5167,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 992413289142222443, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: m_Name
       value: Rata (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 992413289615354795, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
@@ -5106,6 +5277,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioObjetivo
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246557778787017617, guid: 5175d5736886518439bf9a2956a122b4,
+        type: 3}
+      propertyPath: radioDeceleracion
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: objetivo
@@ -5114,7 +5295,7 @@ PrefabInstance:
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}
       propertyPath: distancia
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1582553907309616646, guid: 5175d5736886518439bf9a2956a122b4,
         type: 3}

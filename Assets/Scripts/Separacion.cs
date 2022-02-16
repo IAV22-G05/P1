@@ -26,7 +26,7 @@ namespace UCM.IAV.Movimiento
 
                 if(direccion.lineal.magnitude < distancia)
                 {
-                    fuerza = Mathf.Min(coeficiente / (Mathf.Pow(distancia, 2)), aceleracionMax);
+                    fuerza = Mathf.Min(coeficiente / (Mathf.Pow(direccion.lineal.magnitude, 2)), aceleracionMax);
                     direccion.lineal.Normalize();
                     total.lineal += fuerza * direccion.lineal;
                 }
