@@ -308,4 +308,18 @@ Tras realizar pruebas con distintos números de ratas, se han obtenido estas can
 1000 ratas -> 25 fps
 
 
+## REFERENCIAS
+
+Artificial Intelligence for Games (3a Edición) - Ian Millington
+
+
+## RECURSOS UTILIZADOS
+
+Modelos de:
+Árbol: https://sketchfab.com/3d-models/giant-low-poly-tree-acfd2b7f80894848b56c2ac8e7e59572
+Paisano: https://sketchfab.com/3d-models/low-poly-character-rigged-b2ca55ab706c4b1ba1c6475d8b3c5bfd
+
+Audio:
+https://www.youtube.com/watch?v=V10SLqij2UM&t=26s
+
 
