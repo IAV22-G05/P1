@@ -71,29 +71,10 @@ Este método es uno virtual "Vacío" que redefine cada comportamiento hijo, es e
       
       
 ## Comportamientos
-En esta sección se describen los algoritmos que usaremos y en qué agentes se usarán
+En esta sección se describen los algoritmos que usaremos y en qué agentes se usarán.
 
-### Seguimiento (cinemático)
-Se aplica sobre la manada de ratas 
+Para resolver los diferentes problemas se han decidido usar sólo comportamientos dinámicos, para crear movimientos más fluidos y realistas.
 
-Variables de clase
-    
-    GameObject objetivo
-    Agente agente
-    float velocidadMax
-
-function GetDireccion() -> Direccion:
-
-
-
-    Direccion direccion = new Direccion();
-    
-    // Obtenemos la dirección hacia el objetivo  
-    direccion.lineal = objetivo.transform.position - transform.position
-    direccion.lineal.Normalize()
-    direccion.lineal *= agente.aceleracionMax    
-
-    return direccion
 
 ### Seguimiento (dinámico)
 Se aplica sobre el perro
@@ -114,27 +95,6 @@ function GetDireccion() -> Direccion:
     // Podríamos meter una rotación automática en la dirección del movimiento, si quisiéramos
     direccion.rotation = 0
     return direccion
-
-### Huida (cinemática)
-Se aplica sobre el perro
-
-Variables de clase:
-    
-    GameObject objetivo
-    Agente agente
-    float velocidadMax
-
-function GetDireccion() -> Direccion:
-    
-    Direccion direccion = new Direccion();
-    
-    // Obtiene la direccion al objetivo    
-    direccion.lineal = transform.position - objetivo.transform.position 
-    direccion.lineal.Normalize()
-    direccion.lineal *= agente.aceleracionMax    
-
-    return direccion
-
 
 ### Huida (dinámica)
 Se aplica sobre el perro
@@ -157,50 +117,6 @@ function GetDireccion() -> Direccion:
     // Podríamos meter una rotación automática en la dirección del movimiento, si quisiéramos
     direccion.rotation = 0
     return direccion
-    
-### Llegada (cinemática)
-Se aplica sobre la manada de ratas
-
-Variables de clase:
-
-    GameObject objetivo
-    Agente agente
-    float velocidadMax
-    float radio
-    float tiempoObjetivo = 0.25
-
-function GetDireccion() -> Direccion:
-    
-    Direccion direccion = new Direccion()
-
-    // Obtiene la direccion al objetivo    
-    direccion.lineal = objetivo.transform.position - transform.position
-
-    // Comprueba si estamos dentro del radio
-    if direccion.lineal.magnitude < radio:
-      return null
-
-    // Mueve al agente según el tiempo de deceleración
-    direccion.lineal /= tiempoObjetivo
-
-    // Si va demasiado rápido se le aplica la velocidad máxima
-    if direccion.lineal.magnitude > velocidadMax:
-    direccion.lineal.normalize()
-    direccion.lineal *= velocidadMax
-
-    // Orienta al agente hacia donde se mueve
-    agente.transform.LookAt(agente.transform.position + direccion.lineal)
-
-    direccion.angular = 0
-    return direccion
-    
-    ### Llegada (cinemática)
-
-    GameObject objetivo
-    Agente agente
-    float velocidadMax
-    float radio
-    float tiempoObjetivo = 0.25
     
 ### Llegada (dinámica)
 Se aplica sobre el perro
@@ -253,7 +169,7 @@ function GetDireccion() -> Direccion:
     direccion.angular = 0
     return direccion
     
-### Merodeo
+### Merodeo (Dinámico)
 Se aplica sobre la manada de ratas
 
 Variables de clase:
@@ -350,18 +266,19 @@ Variables de clase
       float distanciaMin
       float coeficiente
       float acelMax
-function GetDireccion() -> Direccion
+      
+Direccion GetDireccion()
       
       Direccion total = new Direccion
       Direccion direccion = new Direccion
       float fuerza
-      for(gameObject o en objetivos)
-            direccion.lineal = o.posicion - posicion
-            distancia = direccion.lineal.magnitud
+      
+      //Recorrer la lista de objetivos y si es necesario añade distancia de separación entre las ratas
+      for(objetivos)
+            distancia =  rata y otra rata de la lista
             
-            if(distancia < distanciaMin)
-                  fuerza = Minimo(coeficiente / (distancia ^ 2), acMax)
-                  total.lineal += fuerza * direccion.lineal.normalized
+            if(distancia es menor que el minimo)
+                  empujar a esta rata el minimo entre dividir el coeficiente entre la distancia al cuadrado o la aceleración máxima
             
       return total
             
