@@ -16,7 +16,8 @@ El resto son agentes inteligentes
 -Ratas: Merodean cuando el jugador no está tocando la flauta y se acercan a él en formación con un algoritmo de seguimiento cuando la toca, se pararán al acercarse con un
 algoritmo de llegada.
 
-## Breve explicación del código implementado en el punto de partida:
+## PUNTO DE PARTIDA
+Estas son las clases ya implementadas al comienzo de la práctica.
 
 ### Clase Dirección:
 
@@ -274,7 +275,9 @@ function GetDireccion() -> Direccion:
     return direccion
     
     
-## OTROS SCRIPTS Y COMPORTAMIENTOS AÑADIDOS 
+## COMPORTAMIENTOS AÑADIDOS 
+Se han añadido los siguientes scripts para cumplir con los requisitos de la práctica
+
 ### Percepción Perro
 Es un script que maneja los cambios de comportamientos del perro
 
@@ -344,7 +347,7 @@ Maneja el movimiento en formación de las ratas cuando siguen al flautista
 Variables de clase
       
       List<GameObject> objetivos
-      float distancia
+      float distanciaMin
       float coeficiente
       float acelMax
 function GetDireccion() -> Direccion
@@ -354,9 +357,10 @@ function GetDireccion() -> Direccion
       float fuerza
       for(gameObject o en objetivos)
             direccion.lineal = o.posicion - posicion
+            distancia = direccion.lineal.magnitud
             
-            if(direccion.lineal.magnitud < distancia)
-                  fuerza = Minimo(coeficiente / (direccion.lineal.magintud ^ 2), acMax)
+            if(distancia < distanciaMin)
+                  fuerza = Minimo(coeficiente / (distancia ^ 2), acMax)
                   total.lineal += fuerza * direccion.lineal.normalized
             
       return total
