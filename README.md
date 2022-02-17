@@ -1,4 +1,8 @@
-# INTELIGENCIA ARTIFICIAL PARA VIDEOJUEGOS - PRÁCTICA 1
+# INTELIGENCIA ARTIFICIAL PARA VIDEOJUEGOS - PRÁCTICA 1 - GRUPO 05
+
+Sergio Molinero Aparicio - Andrés Carnicero Esteban
+
+Video de pruebas: https://youtu.be/saQC4jCFhf8
 
 En el proyecto encontramos varios elementos que deben interactuar entre sí, simulando 
 el comportamiento del flautista de hamelín con unas ratas.
