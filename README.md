@@ -334,8 +334,53 @@ OnTriggerExit (Cuando una rata sale entra en rango)
             //La eliminamos de la lista
             rats.RemoveAt(rata que ha salido);
         }
+        
+### Separacion
+Maneja el movimiento en formación de las ratas cuando siguen al flautista
+Variables de clase
+      
+      List<GameObject> objetivos
+      float distancia
+      float coeficiente
+      float acelMax
+function GetDireccion() -> Direccion
+      
+      Direccion total = new Direccion
+      Direccion direccion = new Direccion
+      float fuerza
+      for(gameObject o en objetivos)
+            direccion.lineal = o.posicion - posicion
+            
+            if(direccion.lineal.magnitud < distancia)
+                  fuerza = Minimo(coeficiente / (direccion.lineal.magintud ^ 2), acMax)
+                  total.lineal += fuerza * direccion.lineal.normalized
+            
+      return total
+            
+### ControlRata
+Maneja los cambios de comportamientos de las ratas
+
+Update (en cada frame)
+      
+      if(pulsandoEspacio)
+            merodear.enabled = false
+            llegada.enabled = true
+            seguir.enabled = true
+      else
+            merodear.enabled = true
+            llegada.enabled = false
+            seguir.enabled = false
 
 
+## RENDIMIENTO
+
+Tras realizar pruebas con distintos números de ratas, se han obtenido estas cantidades medias de fotogramas por segundo:
+
+10 ratas -> 400 fps
+25 ratas -> 360 fps
+50 ratas -> 250 fps
+100 ratas -> 175 fps
+1000 ratas -> 25 fps
 
 
 
